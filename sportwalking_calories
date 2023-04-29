@@ -1,0 +1,9 @@
+ def get_spent_calories(self) -> float:
+        """Количество затраченных каллорий при спортивной ходьбе."""
+        calories = (((self.FIRST_CALORIE_MULTIPLIER * self.weight)
+                     + ((self.get_mean_speed() * self.KMH_IN_MS)
+                     ** self.SECOND_CALORIE_MULTIPLIER
+                     / (self.height / self.CENTIMETRE_IN_METRE))
+                     * self.THIRD_CALORIE_MULTIPLIER * self.weight)
+                    * (self.duration * self.HOURS_IN_MIN))
+        return calories
